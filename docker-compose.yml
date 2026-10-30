@@ -1,0 +1,10 @@
+services:
+  sast-auditor:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ai-sast-auditor
+    volumes:
+      - .:/workspace:ro
+    working_dir: /workspace
+    command: ["/workspace", "--format", "table"]
